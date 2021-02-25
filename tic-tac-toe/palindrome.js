@@ -24,13 +24,13 @@ function checkPalindrome() {
   }
 
   for (i = 0; i < word.length; i++) {
-    // console.log(
-    //   "Forward/Backward index: " + i + " / " + (word.length - 1 - i),
-    //   "    Characters: " +
-    //     word.substr(i, 1) +
-    //     " / " +
-    //     word.substr(word.length - 1 - i, 1)
-    // );
+    console.log(
+      "Forward/Backward index: " + i + " / " + (word.length - 1 - i),
+      "    Characters: " +
+        word.substr(i, 1) +
+        " / " +
+        word.substr(word.length - 1 - i, 1)
+    );
 
     if (i >= word.length - 1 - i) {
       printAnswer("answer", `"${rawString}" is a palindrome.`);

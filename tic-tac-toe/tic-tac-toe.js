@@ -75,24 +75,20 @@ function board(cellNum, boardSize) {
 
     let clickedCell = this.cells[row][col];
     if (clickedCell.isClicked == false) {
-      // console.log("row:", clickedCell.row, "col:", clickedCell.col);
-
       clickedCell.isClicked = true;
       clickedCell.value = players[currentPlayer];
       clickedCell.draw();
-
       this.winCondition = this.checkWinConditions(row, col);
 
-      console.log("win " + this.winCondition);
-      console.log("round " + this.roundNumber);
+      // console.log("row:", clickedCell.row, "col:", clickedCell.col);
+      // console.log("win " + this.winCondition);
+      // console.log("round " + this.roundNumber);
 
       if (this.roundNumber == 9) {
         printAnswer("answer2", "DRAW");
       } else if (this.winCondition) {
-        // console.log(players[currentPlayer] + " WINS!!!");
         printAnswer("answer2", players[currentPlayer] + " WINS!");
       }
-
       currentPlayer = currentPlayer == 0 ? 1 : 0;
     }
   };
@@ -152,7 +148,6 @@ function board(cellNum, boardSize) {
     } else {
       // If no win conditions => increment round number
       this.roundNumber++;
-      console.log(this.roundNumber);
       return false;
     }
   };
